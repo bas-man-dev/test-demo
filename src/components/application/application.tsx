@@ -6,6 +6,8 @@ export const Application = () => {
       <p>All fields are mandatory</p>
       <span title='close'>X</span>
       <img src="https://files.merca20.com/uploads/2019/10/feliz-en-el-trabajo.jpg" alt="people working in an office" />
+     <div data-testid="custom-element">custom HTML element</div>
+     
       <form action="">
         <div>
           <label htmlFor="name">Name</label>
