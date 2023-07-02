@@ -19,6 +19,24 @@ describe("Application", () => {
         const paragraphElement = screen.getByText('All fields are mandatory')
         expect(paragraphElement).toBeInTheDocument()
 
+        const paragraphElement1 = screen.getByText('all fields are mandatory', {exact:false})
+        expect(paragraphElement1).toBeInTheDocument() // ignore case
+
+        const paragraphElement2 = screen.getByText('All fields', {exact:false})
+        expect(paragraphElement2).toBeInTheDocument() //substring match
+
+        const paragraphElement3 = screen.getByText(/All/)
+        expect(paragraphElement3).toBeInTheDocument() //substring regex
+
+        const paragraphElement4 = screen.getByText(/all fiELds are manDatory/i)
+        expect(paragraphElement4).toBeInTheDocument() //substring ignore case
+
+        const paragraphElement5 = screen.getByText(/^All fields are mandatory$/)
+        expect(paragraphElement5).toBeInTheDocument() //exact case, can add i for exact but ignore case
+
+        const paragraphElement6 = screen.getByText((content) => content.startsWith('All'))
+        expect(paragraphElement6).toBeInTheDocument() // custom function
+
         const closeElement = screen.getByTitle('close')
         expect(closeElement).toBeInTheDocument
 
