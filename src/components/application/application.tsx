@@ -1,14 +1,19 @@
 export const Application = () => {
   return (
     <>
-
-    <h1>Job Application Form</h1>
-    <h2>Section 1</h2>
-    <p>All fields are mandatory</p>
+      <h1>Job Application Form</h1>
+      <h2>Section 1</h2>
+      <p>All fields are mandatory</p>
       <form action="">
         <div>
-          <label htmlFor="name" placeholder="Full name">Name</label>
-          <input type="text" id="name" />
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Full name"
+            value="batman"
+            onChange={() => {}}
+          />
         </div>
         <div>
           <label htmlFor="bio">Bio</label>
